@@ -8,7 +8,7 @@
 	} from '@/common/login.js'
 	export default {
 		onLaunch: function() {
-
+			
 		},
 		onShow: function() {
 			let token = uni.getStorageSync('UserToken')
