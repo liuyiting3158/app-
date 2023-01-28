@@ -1,0 +1,16 @@
+{
+    "id": "iamxcd-yqapp",
+    "name": "有钱记账APP",
+    "version": "1.0.0",
+    "description": "基于laravel+uniapp 开发的记账APP",
+    "keywords": [
+        "laravel",
+        "记账"
+    ],
+    "dcloudext": {
+        "category": [
+            "uni-app前端模板",
+            "uni-app前端项目模板"
+        ]
+    }
+}
