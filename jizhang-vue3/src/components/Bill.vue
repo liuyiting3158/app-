@@ -2,21 +2,27 @@
         <!-- 使用 title 插槽来自定义标题 -->
         <div  class="bill">
             <div class="left">
-                <div class="top">
-                    <van-tag type="primary">飞机</van-tag>
-                    <van-tag type="primary">火车</van-tag>
-                    <van-tag type="primary">坦克</van-tag>
+                <div class="top" >
+                    <van-tag type="primary" v-for="(item,index) in type" :key="index">{{ item }}</van-tag>
                 </div>
-                <div class="bottom">备注：</div>
+                <div class="bottom">备注：{{remark}}</div>
             </div>
             <div class="right">
-                ¥100元
+                ¥{{money}}元
             </div>
         </div>
 
 </template>
 
 <script setup>
+
+//向上传递数据props
+const type=['吃饭','购物','交通','住宿','娱乐','其他']
+const money=10089;
+const remark='吃了好多饭'
+
+
+
 
 </script>
 

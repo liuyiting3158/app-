@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "echarts": "^5.4.1",
+    "v-charts": "^1.19.0",
     "vant": "^4.0.9",
     "vue": "^3.2.45",
     "vue-router": "4"

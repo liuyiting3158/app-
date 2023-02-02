@@ -35,5 +35,11 @@ yarn add vue-router@4
 yarn add less less-loader -D
 ```
 
+## 4.图表插件 v-charts
+官网：https://v-charts.js.org/#/
+安装
+```shell
+yarn add v-charts echarts -S
+```
 
 
