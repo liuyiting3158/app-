@@ -1,6 +1,10 @@
 <template>
     <!--头部    -->
-    <van-nav-bar title="记账APP"/>
+    <van-nav-bar title="记账APP" >
+        <template #right>
+            <van-icon name="search" @click="search"/>
+        </template>
+    </van-nav-bar>
     <index-header/>
     <div class="recent-bill">近日账单</div>
     <Bill/>
@@ -10,13 +14,26 @@
     <Bill/>
     <Bill/>
 
-    <van-icon class="bottom-add" name="add"/>
+    <van-icon class="bottom-add" name="add" @click="goDeal"/>
 
 </template>
 
 <script setup>
 import IndexHeader from "../components/Index-header.vue";
 import Bill from "../components/Bill.vue";
+import {useRouter} from "vue-router";
+
+const router = useRouter();
+
+
+const search = () => {
+    console.log("search");
+    router.push("/search");
+}
+
+const goDeal = () => {
+    router.push("/deal");
+}
 
 </script>
 
@@ -37,7 +54,7 @@ import Bill from "../components/Bill.vue";
 
 }
 
-.recent-bill{
+.recent-bill {
     font-size: 14px;
     margin-top: 10px;
     margin-left: 10px;

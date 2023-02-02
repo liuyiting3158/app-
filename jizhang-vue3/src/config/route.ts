@@ -3,6 +3,8 @@ import Mine from "../pages/mine.vue";
 import Statistics from "../pages/statistics.vue";
 import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
+import SearchPage from "../pages/SearchPage.vue";
+import Deal from "../pages/Deal.vue";
 
 const routes=[
     {
@@ -24,6 +26,14 @@ const routes=[
     {
         path: '/user/register',
         component: Register,
+    },
+    {
+        path: '/search',
+        component: SearchPage
+    },
+    {
+        path: '/deal',
+        component: Deal
     }
 ]
 

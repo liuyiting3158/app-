@@ -7,14 +7,20 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AddDeal: typeof import('./src/components/AddDeal.vue')['default']
+    AddDealBottom: typeof import('./src/components/AddDealBottom.vue')['default']
     Bill: typeof import('./src/components/Bill.vue')['default']
+    Expend: typeof import('./src/components/Expend.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    InCome: typeof import('./src/components/InCome.vue')['default']
     IndexHeader: typeof import('./src/components/Index-header.vue')['default']
     MineMy: typeof import('./src/components/mine-my.vue')['default']
     My: typeof import('./src/components/my.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchBar: typeof import('./src/components/search-bar.vue')['default']
     VanButton: typeof import('vant/es')['Button']
+    VanCalendar: typeof import('vant/es')['Calendar']
     VanCell: typeof import('vant/es')['Cell']
     VanCellGroup: typeof import('vant/es')['CellGroup']
     VanConfigProvider: typeof import('vant/es')['ConfigProvider']
@@ -25,11 +31,15 @@ declare module '@vue/runtime-core' {
     VanGridItem: typeof import('vant/es')['GridItem']
     VanIcon: typeof import('vant/es')['Icon']
     VanNavBar: typeof import('vant/es')['NavBar']
+    VanNumberKeyboard: typeof import('vant/es')['NumberKeyboard']
+    VanSearch: typeof import('vant/es')['Search']
     VanSkeleton: typeof import('vant/es')['Skeleton']
     VanSkeletonImage: typeof import('vant/es')['SkeletonImage']
     VanSkeletonParagraph: typeof import('vant/es')['SkeletonParagraph']
+    VanTab: typeof import('vant/es')['Tab']
     VanTabbar: typeof import('vant/es')['Tabbar']
     VanTabbarItem: typeof import('vant/es')['TabbarItem']
+    VanTabs: typeof import('vant/es')['Tabs']
     VanTag: typeof import('vant/es')['Tag']
   }
 }
