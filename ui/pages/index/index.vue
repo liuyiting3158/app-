@@ -285,6 +285,8 @@
 	
 			&.data {
 				padding-right: 20rpx;
+				display: flex;
+				flex-direction: row;
 				.item {
 					flex: 1;
 				}

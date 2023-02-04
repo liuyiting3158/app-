@@ -31,8 +31,8 @@
 .nexbox{
 	display: flex;
 	.pic{
-		width: 200rpx;
-		height: 190rpx;
+		width: 100rpx;
+		height: 100rpx;
 		image{
 			width: 100%;
 			height: 100%;
