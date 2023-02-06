@@ -1,5 +1,5 @@
-import Index from "../pages/Index.vue";
-import Mine from "../pages/mine.vue";
+import Index from "../pages/Home.vue";
+import Mine from "../pages/user.vue";
 import Statistics from "../pages/statistics.vue";
 import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";

@@ -12,8 +12,23 @@
 
         </div>
         <div class="content-right">
-            <van-icon name="photograph"/>
+
+            <van-uploader class="camera"
+                          :after-read="afterRead"
+                          capture="camera"
+                          :before-read="beforeRead"
+            >
+                <van-icon
+                    name="photograph"
+                    class="v-icon-class"
+                />
+            </van-uploader>
+
+
+
+
         </div>
+
     </div>
     <van-divider/>
 
@@ -21,9 +36,41 @@
 
 <script setup>
 
-import {ref} from "vue";
+import {reactive, ref} from "vue";
 
-const value=ref(0);
+const value = ref(0);
+
+const beforeRead = (file) => {
+    console.log(file);
+    //对图片进行裁剪
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            const img = new Image();
+            img.src = reader.result;
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+                canvas.toBlob((blob) => {
+                    blob.name = file.name;
+                    resolve(blob);
+                }, file.type);
+            };
+        };
+    });
+};
+
+const afterRead = (file) => {
+    console.log(file);
+    // do something with file
+};
+
+
+
 
 </script>
 
@@ -37,6 +84,8 @@ const value=ref(0);
     margin-left: 10px;
     margin-right: 10px;
 
+
+
     .content-left {
         font-size: 30px;
         color: #84B585;
@@ -45,8 +94,15 @@ const value=ref(0);
     .content-right {
         font-size: 30px;
         color: #84B585;
-        //居中
         align-self: center;
+
+        .camera {
+            width: 50px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+
     }
 }
 
