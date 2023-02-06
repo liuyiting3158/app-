@@ -1,7 +1,7 @@
 <template>
     <van-grid :column-num="3">
         <van-grid-item
-            v-for="(item,index) in data"
+            v-for="(item,index) in icons"
             :key="index" :icon=item.icon :text=item.text
         />
     </van-grid>
@@ -14,7 +14,7 @@ export default {
     name: "Expend",
     data() {
         return {
-            data: [
+            icons: [
                 {
                     text: '餐饮',
                     icon: 'food-o'
@@ -54,6 +54,7 @@ export default {
                     icon: 'edit-o'
                 }
             ],
+
         }
     },
     methods: {

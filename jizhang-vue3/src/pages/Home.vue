@@ -10,10 +10,10 @@
     <!--    标题下方-->
     <div class="header">
         <div class="top">本月支出(元)</div>
-        <div class="second">¥{{ money.expend }}元</div>
+        <div class="second">¥{{ expend }}元</div>
         <div class="third">
             <div class="left">
-                本月收入: <span>¥{{ money.income }}元</span>
+                本月收入: <span>¥{{ income }}元</span>
             </div>
             <div class="right">
                 月结余: <span> ¥{{ balance }}元</span>
@@ -24,7 +24,11 @@
 
 
     <!--账单组件    -->
-    <Bill/>
+    <Bill v-for="item in billListTemp"
+          :key="item.remark"
+          :type="item.type"
+          :money="item.money"
+          :remark="item.remark"/>
 
 
     <!--    按钮-->
@@ -32,7 +36,7 @@
 
 </template>
 
-<script >
+<script>
 import Bill from "../components/Bill.vue";
 import {useRouter} from "vue-router";
 
@@ -43,11 +47,44 @@ export default {
     },
     data() {
         return {
-            money:{
+            money: {
                 income: 10286,
                 expend: 2389,
             },
             router: useRouter(),
+            billList: [
+                {
+                    type: ['吃饭'],
+                    money: 10086,
+                    remark: '吃了好多饭啊'
+                },
+                {
+                    type: ['购物'],
+                    money: 100826,
+                    remark: '吃了好多饭啊'
+                },
+                {
+                    type: ['交通'],
+                    money: -1003286,
+                    remark: '吃了好多饭啊'
+                },
+                {
+                    type: ['住宿'],
+                    money: -1003286,
+                    remark: '吃了好多饭啊'
+                },
+                {
+                    type: ['娱乐'],
+                    money: 100816,
+                    remark: '吃了好多饭啊'
+                },
+                {
+                    type: ['其他'],
+                    money: 1002186,
+                    remark: '吃了好多饭啊'
+                },
+            ]
+
         }
     },
     methods: {
@@ -63,12 +100,31 @@ export default {
     computed: {
         balance() {
             return this.money.income - this.money.expend;
+        },
+        income() {
+            let sum = 0;
+            for (let i = 0; i < this.billList.length; i++) {
+                if (this.billList[i].money > 0) {
+                    sum += this.billList[i].money;
+                }
+            }
+            return sum;
+        },
+        expend() {
+            let sum = 0;
+            for (let i = 0; i < this.billList.length; i++) {
+                if (this.billList[i].money < 0) {
+                    sum += this.billList[i].money;
+                }
+            }
+            return sum;
+        },
+        billListTemp(){
+            return this.billList.slice(0, 3);
         }
     }
 
 }
-
-
 
 
 </script>
