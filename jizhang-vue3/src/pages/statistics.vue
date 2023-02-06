@@ -1,9 +1,11 @@
 <template>
-    <van-nav-bar title="账单详情"   >
+    <van-nav-bar title="账单详情" left-text="返回" left-arrow>
         <template #right>
-            <van-icon name="search" size="18" @click="toSearch" />
+            <van-icon name="calendar-o" size="18" @click="time"/>
         </template>
     </van-nav-bar>
+
+
 </template>
 
 <script >
@@ -24,6 +26,10 @@ export default {
         toSearch() {
             this.router.push("/search");
         },
+        time(){
+            
+            this.router.push("/time");
+        }
     }
 }
 
