@@ -25,16 +25,23 @@
     <van-cell title="退出登陆" is-link to=""/>
 </template>
 
-<script setup>
+<script>
 import {useRouter} from "vue-router";
 
-const router = useRouter();
-
-const toLogin = () => {
-    router.push("/user/login")
-    //路由跳转
-
+export default {
+    name: "User",
+    data() {
+        return {
+            router: useRouter()
+        }
+    },
+    methods: {
+        toLogin() {
+            this.router.push("/user/login")
+        }
+    }
 }
+
 </script>
 
 <style scoped lang="less">

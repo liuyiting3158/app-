@@ -8,49 +8,61 @@
 
 </template>
 
-<script setup>
+<script >
 
-const data = [
-    {
-        text: '工资',
-        icon: 'home-o'
+export default {
+    name: "Expend",
+    data() {
+        return {
+            data: [
+                {
+                    text: '餐饮',
+                    icon: 'food-o'
+                },
+                {
+                    text: '购物',
+                    icon: 'shopping-cart-o'
+                },
+                {
+                    text: '运动',
+                    icon: 'basketball-o',
+                },
+                {
+                    text: '交通',
+                    icon: 'bus-o'
+                },
+                {
+                    text: '通信',
+                    icon: 'phone-o'
+                },
+                {
+                    text: '旅行',
+                    icon: 'airplay-o'
+                },
+                {
+                    text: '娱乐',
+                    //游戏图标
+                    icon: 'game-o'
+                },
+                {
+                    text: '学习',
+                    icon: 'book-o',
+                },
+                {
+                    text: '自定义',
+                    //笔图标
+                    icon: 'edit-o'
+                }
+            ],
+        }
     },
-    {
-        text: '红包',
-        icon: 'search-o'
-    },
-    {
-        text: '租金',
-        icon: 'friends-o'
-    },
-    {
-        text: '分红',
-        icon: 'chat-o'
-    },
-    {
-        text: '理财',
-        icon: 'cart-o'
-    },
-    {
-        text: '其他',
-        icon: 'photo-o'
-    },
-    {
-        text: '借入',
-        icon: 'photo-o'
-
-    },
-    {
-        text: '收款',
-        icon: 'photo-o'
-    },
-    {
-        text: '设置',
-        icon: 'photo-o'
+    methods: {
+        onClickLeft() {
+            this.router.back();
+        },
     }
+}
 
-
-]
 
 </script>
 

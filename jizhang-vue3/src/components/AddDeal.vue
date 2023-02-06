@@ -34,40 +34,47 @@
 
 </template>
 
-<script setup>
+<script >
 
 import {reactive, ref} from "vue";
+export default {
+    name: "AddDeal",
+    data() {
+        return {
+            value: 0,
+        }
+    },
+    methods: {
+        beforeRead(file) {
+            console.log(file);
+            //对图片进行裁剪
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                    const img = new Image();
+                    img.src = reader.result;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0, img.width, img.height);
+                        canvas.toBlob((blob) => {
+                            blob.name = file.name;
+                            resolve(blob);
+                        }, file.type);
+                    };
+                };
+            });
+        },
+        afterRead(file) {
+            console.log(file);
+            // do something with file
+        },
+    }
+}
 
-const value = ref(0);
-
-const beforeRead = (file) => {
-    console.log(file);
-    //对图片进行裁剪
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-            const img = new Image();
-            img.src = reader.result;
-            img.onload = () => {
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0, img.width, img.height);
-                canvas.toBlob((blob) => {
-                    blob.name = file.name;
-                    resolve(blob);
-                }, file.type);
-            };
-        };
-    });
-};
-
-const afterRead = (file) => {
-    console.log(file);
-    // do something with file
-};
 
 
 

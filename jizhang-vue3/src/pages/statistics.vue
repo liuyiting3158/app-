@@ -1,24 +1,32 @@
 <template>
-    <van-nav-bar title="账单详情" left-text="返回" left-arrow @click="toBack">
+    <van-nav-bar title="账单详情"   >
         <template #right>
-            <van-icon name="search" size="18" />
+            <van-icon name="search" size="18" @click="toSearch" />
         </template>
     </van-nav-bar>
-
-
 </template>
 
-<script setup>
-
+<script >
 
 import {useRouter} from "vue-router";
 
-const router = useRouter();
-const toBack = () => {
-    //路由跳转
-    router.back();
-
+export default {
+    name: "Deal",
+    data(){
+        return {
+            router: useRouter(),
+        }
+    },
+    methods: {
+        toBack() {
+            this.router.back();
+        },
+        toSearch() {
+            this.router.push("/search");
+        },
+    }
 }
+
 
 
 </script>

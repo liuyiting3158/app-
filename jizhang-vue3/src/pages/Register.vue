@@ -52,44 +52,53 @@
     </van-cell-group>
 </template>
 
-<script setup>
+<script >
 import {useRouter} from "vue-router";
 import {ref} from "vue";
 
-const router = useRouter();
-const onClickLeft = () => {
-    router.back();
+export default {
+    name: "Register",
+    data() {
+        return {
+            username: "",
+            password: "",
+            password2: "",
+            phone: "",
+            router: useRouter(),
+        }
+    },
+    methods: {
+        onClickLeft() {
+            this.router.back();
+        },
+        onSubmit() {
+            if (this.password !== this.password2) {
+                alert("两次密码不一致");
+                return;
+            }
+            if (this.username === "") {
+                alert("用户名不能为空");
+                return;
+            }
+            if (this.phone === "") {
+                alert("手机号不能为空");
+                return;
+            }
+            if (this.password === "") {
+                alert("密码不能为空");
+                return;
+            }
+            if (this.password2 === "") {
+                alert("确认密码不能为空");
+            }
+            //发送请求
+            //todo
+        }
+    }
 }
 
-const username = ref("");
-const password = ref("");
-const password2 = ref("");
-const phone = ref("");
 
 
-const onSubmit = () => {
-    if (password.value !== password2.value) {
-        alert("两次密码不一致");
-        return;
-    }
-    if (username.value === "") {
-        alert("用户名不能为空");
-        return;
-    }
-    if (phone.value === "") {
-        alert("手机号不能为空");
-        return;
-    }
-    if (password.value === "") {
-        alert("密码不能为空");
-        return;
-    }
-    if (password2.value === "") {
-        alert("确认密码不能为空");
-        return;
-    }
-    alert("注册成功");
-}
 
 </script>
 

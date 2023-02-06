@@ -38,22 +38,36 @@
 
 </template>
 
-<script setup>
+<script>
 import {ref} from "vue";
 import {showToast} from "vant";
 import {useRouter} from "vue-router";
 import Bill from "../components/Bill.vue";
 
-const router = useRouter();
-
-const value = ref('');
-const active = ref(0);
-const onSearch = (val) => showToast(val);
-const onCancel = () => showToast('取消');
-
-const onClickLeft = () => {
-    console.log("返回");
-    router.back();
+export default {
+    name: "SearchPage",
+    components: {
+        Bill
+    },
+    data() {
+        return {
+            router: useRouter(),
+            value: '',
+            active: 0,
+        }
+    },
+    methods: {
+        onSearch(val) {
+            showToast(val);
+        },
+        onCancel() {
+            showToast('取消');
+        },
+        onClickLeft() {
+            console.log("返回");
+            this.router.back();
+        }
+    }
 }
 
 </script>

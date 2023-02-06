@@ -1,20 +1,7 @@
-<script setup lang="ts">
-import {ref} from "vue";
-import {showToast} from "vant";
-import Index from "../pages/Home.vue";
-import Statistics from "../pages/statistics.vue";
-import Mine from "../pages/mine.vue";
 
-const active = ref('index')
-
-const onClickLeft = () => history.back();
-const onClickRight = () => showToast('按钮');
-
-
-</script>
 
 <template>
-    <!--主体内容-->
+    <!--主体内容:这里通过路由跳转页面-->
     <div class="content">
         <router-view/>
     </div>
@@ -34,7 +21,38 @@ const onClickRight = () => showToast('按钮');
 </template>
 
 
+<script  lang="ts">
+import Home from "./pages/Home.vue";
+import Statistics from "./pages/statistics.vue";
+import User from "./pages/user.vue";
+import {showToast} from "vant";
 
+export default {
+    name: "App",
+    data() {
+        return {
+            active: 0,
+        }
+    },
+    components: {
+        Index: Home,
+        Statistics,
+        User,
+    },
+    methods: {
+        onClickLeft() {
+            history.back();
+        },
+        onClickRight() {
+            showToast('按钮');
+        }
+    },
+    mounted() {
+
+    }
+}
+
+</script>
 
 <style scoped lang="less">
 //背景颜色灰色

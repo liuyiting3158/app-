@@ -42,27 +42,44 @@
 
 </template>
 
-<script setup>
+<script >
 
-import {ref} from "vue";
 import AddDeal from "../components/AddDeal.vue";
 import Expend from "../components/Expend.vue";
 import InCome from "../components/InCome.vue";
+import {useRouter} from "vue-router";
 
-const onClickLeft = () => {
-    history.back();
+export default {
+    name: "Deal",
+    components: {
+        AddDeal,
+        Expend,
+        InCome
+    },
+    data() {
+        return {
+            active: 0,
+            date: '',
+            show: false,
+            router: useRouter(),
+        }
+    },
+    methods: {
+        formatDate(date) {
+            return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+        },
+        onConfirm(value) {
+            this.show = false;
+            this.date = this.formatDate(value);
+        },
+        onClickLeft() {
+            this.router.back();
+        }
+    }
 }
-const active = ref(0);
 
 
-const date = ref('');
-const show = ref(false);
 
-const formatDate = (date) => `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-const onConfirm = (value) => {
-    show.value = false;
-    date.value = formatDate(value);
-};
 
 
 </script>

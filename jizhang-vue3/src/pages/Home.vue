@@ -10,10 +10,10 @@
     <!--    标题下方-->
     <div class="header">
         <div class="top">本月支出(元)</div>
-        <div class="second">¥{{ data[0].expend }}元</div>
+        <div class="second">¥{{ money.expend }}元</div>
         <div class="third">
             <div class="left">
-                本月收入: <span>¥{{ data[0].income }}元</span>
+                本月收入: <span>¥{{ money.income }}元</span>
             </div>
             <div class="right">
                 月结余: <span> ¥{{ balance }}元</span>
@@ -32,37 +32,44 @@
 
 </template>
 
-<script setup>
+<script >
 import Bill from "../components/Bill.vue";
 import {useRouter} from "vue-router";
 
-const router = useRouter();
-
-//向上传递数据props
-import {computed, ref} from "vue";
-
-const income = ref(100.0);
-
-const data = [
-    {
-        income: 11000.0,
-        expend: 320.0,
+export default {
+    name: "Home",
+    components: {
+        Bill,
+    },
+    data() {
+        return {
+            money:{
+                income: 10286,
+                expend: 2389,
+            },
+            router: useRouter(),
+        }
+    },
+    methods: {
+        search() {
+            console.log("search");
+            this.router.push("/search");
+        },
+        goDeal() {
+            console.log("sb")
+            this.router.push("/deal");
+        }
+    },
+    computed: {
+        balance() {
+            return this.money.income - this.money.expend;
+        }
     }
-]
 
-const balance = computed(() => {
-    return data[0].income - data[0].expend;
-})
-
-
-const search = () => {
-    console.log("search");
-    router.push("/search");
 }
 
-const goDeal = () => {
-    router.push("/deal");
-}
+
+
 
 </script>
 <!--//#84B585-->
@@ -113,6 +120,7 @@ const goDeal = () => {
     }
 
 }
+
 //标题下方的样式结束
 
 

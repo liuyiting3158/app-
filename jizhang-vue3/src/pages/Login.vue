@@ -58,25 +58,32 @@
 
 </template>
 
-<script setup>
+<script >
 import {ref} from "vue";
 import {useRouter} from "vue-router";
 
-const router = useRouter();
-
-const username = ref('');
-const password = ref('');
-const onSubmit = (values) => {
-    console.log('submit', values);
-};
-
-const onClickLeft = () => {
-    router.push("/user")
+export default {
+    name: "Login",
+    data() {
+        return {
+            username: '',
+            password: '',
+            router: useRouter()
+        }
+    },
+    methods: {
+        onSubmit() {
+            console.log('submit', this.username, this.password);
+        },
+        onClickLeft() {
+            this.router.push("/user")
+        },
+        toRegister() {
+            this.router.push("/user/register")
+        }
+    }
 }
 
-const toRegister = () => {
-    router.push("/user/register")
-}
 
 </script>
 

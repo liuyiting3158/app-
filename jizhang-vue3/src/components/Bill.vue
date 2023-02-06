@@ -1,29 +1,38 @@
 <template>
-        <!-- 使用 title 插槽来自定义标题 -->
-        <div  class="bill">
-            <div class="left">
-                <div class="top" >
-                    <van-tag type="primary" v-for="(item,index) in type" :key="index">{{ item }}</van-tag>
-                </div>
-                <div class="bottom">备注：{{remark}}</div>
+    <!-- 使用 title 插槽来自定义标题 -->
+    <div class="bill">
+        <div class="left">
+            <div class="top">
+                <van-tag type="primary" v-for="(item,index) in type" :key="index">{{ item }}</van-tag>
             </div>
-            <div class="right">
-                ¥{{money}}元
-            </div>
+            <div class="bottom">备注：{{ remark }}</div>
         </div>
-
+        <div class="right">
+            ¥{{ money }}元
+        </div>
+    </div>
 
 
 </template>
 
-<script setup>
-
-//向上传递数据props
-const type=['吃饭','购物','交通','住宿','娱乐','其他']
-const money=10089;
-const remark='吃了好多饭'
-
-
+<script lang="ts">
+export default {
+    name: "Bill",
+    props: {
+        type: {
+            type: Array,
+            default: () => ['吃饭', '购物', '交通', '住宿', '娱乐', '其他']
+        },
+        money: {
+            type: Number,
+            default: 10086
+        },
+        remark: {
+            type: String,
+            default: '吃了好多饭啊'
+        }
+    }
+}
 
 
 </script>
@@ -42,6 +51,7 @@ const remark='吃了好多饭'
     background-color: #fff;
     //圆角
     border-radius: 15px;
+
     .left {
         display: flex;
         flex-direction: column;
@@ -49,6 +59,7 @@ const remark='吃了好多饭'
         .top {
             display: flex;
             flex-direction: row;
+
             .van-tag {
                 margin-right: 5px;
             }
@@ -58,7 +69,6 @@ const remark='吃了好多饭'
             font-size: 14px;
             color: #999;
         }
-
 
 
     }
