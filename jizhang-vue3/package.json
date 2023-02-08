@@ -11,8 +11,9 @@
   "dependencies": {
     "echarts": "^5.4.1",
     "v-charts": "^1.19.0",
-    "vant": "^4.0.9",
+    "vant": "^4.0.10",
     "vue": "^3.2.45",
+    "vue-calendar-component": "^2.8.2",
     "vue-router": "4"
   },
   "devDependencies": {

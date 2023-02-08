@@ -131,6 +131,12 @@ export default {
 <!--//#84B585-->
 
 <style scoped lang="less">
+.van-nav-bar {
+    background-color: #84B585;
+    color: #dedbdb;
+    font-size: 20px;
+    font-weight: bold;
+}
 //标题下方的样式开始
 .header {
     background-color: #84B585;
