@@ -3,7 +3,7 @@
 <template>
     <!--主体内容:这里通过路由跳转页面-->
     <div class="content">
-        <router-view/>
+        <router-view v-if="isRouterAlive"></router-view>
     </div>
 
     <!--底部-->
@@ -29,9 +29,15 @@ import {showToast} from "vant";
 
 export default {
     name: "App",
+    provide() {
+        return {
+            reload: this.reload
+        }
+    },
     data() {
         return {
             active: 0,
+            isRouterAlive: true,
         }
     },
     components: {
@@ -45,6 +51,12 @@ export default {
         },
         onClickRight() {
             showToast('按钮');
+        },
+        reload() {
+            this.isRouterAlive = false;
+            this.$nextTick(() => {
+                this.isRouterAlive = true;
+            })
         }
     },
     mounted() {
