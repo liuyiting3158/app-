@@ -2,6 +2,7 @@
     <!--    顶部标题-->
     <van-nav-bar title="我的"/>
 
+
     <!--    标题下方我的-->
     <div class="content" @click="toLogin">
         <div class="left">

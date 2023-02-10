@@ -89,7 +89,7 @@ export default {
     name: "App",
     data() {
         return {
-            active: 0,
+            active: "index",
             isRouterAlive: true,
         }
     },

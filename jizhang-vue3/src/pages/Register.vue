@@ -91,8 +91,6 @@ export default {
             if (this.password2 === "") {
                 alert("确认密码不能为空");
             }
-            //发送请求
-            //todo
         }
     }
 }

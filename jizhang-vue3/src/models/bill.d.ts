@@ -2,7 +2,7 @@
  * 账单
  */
 
-export interface BillType {
+export type BillType= {
     id: number;//账单id
     userId: number;//用户id
     billType: Array;//账单类型

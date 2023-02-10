@@ -18,6 +18,7 @@
     </div>
 </template>
 
+
 <script >
 import {useRouter} from "vue-router";
 import {Line} from "vue-echarts";
@@ -164,14 +165,3 @@ export default {
     }
 }
 </style>
-
-page.json
-
-{
-  "navigationBarTitleText": "账单详情",
-  "usingComponents": {
-    "van-nav-bar": "@vant/weapp/nav-bar/index",
-    "van-icon": "@vant/weapp/icon/index",
-    "van-calendar": "@vant/weapp/calendar/index"
-  }
-}
