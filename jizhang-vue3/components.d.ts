@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     Bill: typeof import('./src/components/Bill.vue')['default']
     Expend: typeof import('./src/components/Expend.vue')['default']
     InCome: typeof import('./src/components/InCome.vue')['default']
+    Mychart: typeof import('./src/components/Mychart.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     VanButton: typeof import('vant/es')['Button']

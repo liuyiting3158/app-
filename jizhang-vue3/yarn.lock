@@ -921,7 +921,7 @@
 
 "echarts@^4.8.0", "echarts@^5.4.1", "echarts@>3.0.0":
   "integrity" "sha512-9ltS3M2JB0w2EhcYjCdmtrJ+6haZcW6acBolMGIuf01Hql1yrIV01L1aRj7jsaaIULJslEP9Z3vKlEmnJaWJVQ=="
-  "resolved" "https://registry.npmmirror.com/echarts/-/echarts-5.4.1.tgz"
+  "resolved" "https://registry.npmjs.org/echarts/-/echarts-5.4.1.tgz"
   "version" "5.4.1"
   dependencies:
     "tslib" "2.3.0"
@@ -1670,6 +1670,11 @@
   dependencies:
     "picomatch" "^2.2.1"
 
+"resize-detector@^0.3.0":
+  "integrity" "sha512-R/tCuvuOHQ8o2boRP6vgx8hXCCy87H1eY9V5imBYeVNyNVpuL9ciReSccLj2gDcax9+2weXy3bc8Vv+NRXeEvQ=="
+  "resolved" "https://registry.npmjs.org/resize-detector/-/resize-detector-0.3.0.tgz"
+  "version" "0.3.0"
+
 "resolve@^1.22.1":
   "integrity" "sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw=="
   "resolved" "https://registry.npmmirror.com/resolve/-/resolve-1.22.1.tgz"
@@ -1978,7 +1983,7 @@
 
 "v-charts@^1.19.0":
   "integrity" "sha512-vm2HBUmxAsXK0ivwce9LytcpqrItDA5JSPLYVxZXtiuoyhcn80XX1/3dPJd/1GqG1OYv3jfBo1s9ra4q8GowqA=="
-  "resolved" "https://registry.npmmirror.com/v-charts/-/v-charts-1.19.0.tgz"
+  "resolved" "https://registry.npmjs.org/v-charts/-/v-charts-1.19.0.tgz"
   "version" "1.19.0"
   dependencies:
     "echarts-amap" "1.0.0-rc.6"
@@ -2012,6 +2017,19 @@
   "resolved" "https://registry.npmjs.org/vue-calendar-component/-/vue-calendar-component-2.8.2.tgz"
   "version" "2.8.2"
 
+"vue-demi@^0.13.2":
+  "integrity" "sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A=="
+  "resolved" "https://registry.npmjs.org/vue-demi/-/vue-demi-0.13.11.tgz"
+  "version" "0.13.11"
+
+"vue-echarts@^6.5.4":
+  "integrity" "sha512-pLJTk2hfhauoWdmiZGXByAtcO6bpfnAS+jkJqKimSBSV5I5ckh2nka9duLlIVbTvQOEb2tFa0XiXjACQNcEfpA=="
+  "resolved" "https://registry.npmjs.org/vue-echarts/-/vue-echarts-6.5.4.tgz"
+  "version" "6.5.4"
+  dependencies:
+    "resize-detector" "^0.3.0"
+    "vue-demi" "^0.13.2"
+
 "vue-router@4":
   "integrity" "sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ=="
   "resolved" "https://registry.npmmirror.com/vue-router/-/vue-router-4.1.6.tgz"
@@ -2035,7 +2053,7 @@
     "@volar/vue-language-core" "1.0.24"
     "@volar/vue-typescript" "1.0.24"
 
-"vue@^3.0.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.45", "vue@>2.0.0", "vue@2 || 3", "vue@3.2.45":
+"vue@^2.6.12 || ^3.1.1", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.45", "vue@>2.0.0", "vue@2 || 3", "vue@3.2.45":
   "integrity" "sha512-9Nx/Mg2b2xWlXykmCwiTUCWHbWIj53bnkizBxKai1g61f2Xit700A1ljowpTIM11e3uipOeiPcSqnmBg6gyiaA=="
   "resolved" "https://registry.npmmirror.com/vue/-/vue-3.2.45.tgz"
   "version" "3.2.45"

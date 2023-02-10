@@ -3,6 +3,7 @@ import App from './App.vue'
 import * as VueRouter from 'vue-router'
 import routes from "./config/route";
 import './style/baseColor.css'
+
 // @ts-ignore
 
 const router = VueRouter.createRouter({
@@ -14,6 +15,5 @@ const router = VueRouter.createRouter({
 const app = createApp(App)
 app.use(router)
 app.mount('#app')
-
 
 

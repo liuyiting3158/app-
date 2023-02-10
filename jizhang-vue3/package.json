@@ -14,6 +14,7 @@
     "vant": "^4.0.10",
     "vue": "^3.2.45",
     "vue-calendar-component": "^2.8.2",
+    "vue-echarts": "^6.5.4",
     "vue-router": "4"
   },
   "devDependencies": {

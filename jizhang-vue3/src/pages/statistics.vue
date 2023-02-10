@@ -1,9 +1,10 @@
 <template>
-    <van-nav-bar title="账单详情" left-text="返回" left-arrow>
+    <van-nav-bar title="账单详情" >
         <template #right>
-            <van-icon name="calendar-o" size="25" value="{{ date }}" bind:click="onDisplay"/>
+            <van-icon name="calendar-o" size="25" :value="date" @click="show = true"/>
             <van-calendar 
                 :show="show"
+                type="range"
                 @click-close-icon="show = false"
                 @confirm="onConfirm"
                 :show-confirm="false"
@@ -13,17 +14,21 @@
 
     <div class="page-line-chart">
         <h4>简单折线图</h4>
-        <ve-line :data="chartData"></ve-line>
+        <ve-line :data="chartData" ></ve-line>
     </div>
 </template>
 
 <script >
 import {useRouter} from "vue-router";
-
+import {Line} from "vue-echarts";
 export default {
     name: "Deal",
+    components: {
+        VeLine: Line
+    },
     data(){
         return {
+            date: '2021-01-01',
             chartData: {
                 columns: ['日期', '支出', '收入'],
                 rows: [
@@ -60,7 +65,6 @@ export default {
                     {日期: '1/31', 支出: 3100, 收入: 3200}
                 ]
             },
-            date: '2021-01-01',
             data: '',
             show: false,
             router: useRouter()
