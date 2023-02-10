@@ -4,7 +4,7 @@
             <!-- 可以使用 CellGroup 作为容器 -->
             <van-cell-group inset>
                 <van-field
-                    v-model="value"
+                    v-model="bill.billAmount"
                     label="请输入金额"
                     placeholder="请输入金额"
                 />
@@ -12,7 +12,6 @@
 
         </div>
         <div class="content-right">
-
             <van-uploader class="camera"
                           :after-read="afterRead"
                           capture="camera"
@@ -23,10 +22,6 @@
                     class="v-icon-class"
                 />
             </van-uploader>
-
-
-
-
         </div>
 
     </div>
@@ -41,7 +36,13 @@ export default {
     name: "AddDeal",
     data() {
         return {
-            value: 0,
+            bill:{
+                billType: [],
+                billAmount: 0,
+                billDate: Date,
+                billShopkeeper: "",
+                billRemark: "",
+            }
         }
     },
     methods: {

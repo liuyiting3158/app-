@@ -2,7 +2,7 @@
     <van-nav-bar title="账单详情" left-text="返回" left-arrow>
         <template #right>
             <van-icon name="calendar-o" size="25" value="{{ date }}" bind:click="onDisplay"/>
-            <van-calendar 
+            <van-calendar
                 :show="show"
                 @click-close-icon="show = false"
                 @confirm="onConfirm"
@@ -16,6 +16,7 @@
         <ve-line :data="chartData"></ve-line>
     </div>
 </template>
+
 
 <script >
 import {useRouter} from "vue-router";
@@ -160,14 +161,3 @@ export default {
     }
 }
 </style>
-
-page.json
-
-{
-  "navigationBarTitleText": "账单详情",
-  "usingComponents": {
-    "van-nav-bar": "@vant/weapp/nav-bar/index",
-    "van-icon": "@vant/weapp/icon/index",
-    "van-calendar": "@vant/weapp/calendar/index"
-  }
-}
