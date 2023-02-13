@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  devtools:
+    restart:
+      enabled: true #开启热部署
+      additional-paths: src/main/java #监控的文件夹
+      exclude: static/**,public/** #不监控的文件夹
+  freemarker:
+    cache: false #页面不加载缓存，修改页面后立即生效
+    charset: UTF-8
+  # session 失效时间
+  session:
+    timeout: 8640000
+  # 解决sprigboot与swagger3冲突
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher # ant风格的路径匹配
+  application:
+    name: "记账APP"
+
+
+
+# Mybatis-Plus Config
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-field: flag # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+
+# swagger3
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
+
+  #spring.application.name=shop接口,增加中文会乱码，可以修改文件编码，或者使用yml格式
+  # ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: "记账APP"
+  application-version: 1.0.0
+  application-description: "记账APP接口文档"

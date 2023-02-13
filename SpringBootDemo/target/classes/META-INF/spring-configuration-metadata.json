@@ -1,0 +1,36 @@
+{
+  "groups": [
+    {
+      "name": "swagger",
+      "type": "com.cxk.config.SwaggerConfiguration",
+      "sourceType": "com.cxk.config.SwaggerConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "swagger.application-description",
+      "type": "java.lang.String",
+      "description": "项目描述信息",
+      "sourceType": "com.cxk.config.SwaggerConfiguration"
+    },
+    {
+      "name": "swagger.application-name",
+      "type": "java.lang.String",
+      "description": "项目应用名",
+      "sourceType": "com.cxk.config.SwaggerConfiguration"
+    },
+    {
+      "name": "swagger.application-version",
+      "type": "java.lang.String",
+      "description": "项目版本信息",
+      "sourceType": "com.cxk.config.SwaggerConfiguration"
+    },
+    {
+      "name": "swagger.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启swagger，生产环境一般关闭，所以这里定义一个变量",
+      "sourceType": "com.cxk.config.SwaggerConfiguration"
+    }
+  ],
+  "hints": []
+}
