@@ -21,15 +21,10 @@
 
 <script >
 import {useRouter} from "vue-router";
-import {Line} from "vue-echarts";
 export default {
     name: "Deal",
-    components: {
-        VeLine: Line
-    },
     data(){
         return {
-            date: '2021-01-01',
             chartData: {
                 columns: ['日期', '支出', '收入'],
                 rows: [
@@ -66,6 +61,7 @@ export default {
                     {日期: '1/31', 支出: 3100, 收入: 3200}
                 ]
             },
+            date: '2021-01-01 - 2021-01-31',
             data: '',
             show: false,
             router: useRouter()
