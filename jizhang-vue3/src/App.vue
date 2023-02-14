@@ -25,6 +25,7 @@ import Home from "./pages/Home.vue";
 import Statistics from "./pages/statistics.vue";
 import User from "./pages/user.vue";
 import {showToast} from "vant";
+
 export default {
     name: "App",
     provide() {

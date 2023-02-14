@@ -1,21 +1,34 @@
 <template>
     <!-- 使用 title 插槽来自定义标题 -->
-    <div class="bill">
-        <div class="left">
-            <div class="top">
-                <van-tag type="primary" v-for="(item,index) in type" :key="index">{{ item }}</van-tag>
+    <van-swipe-cell>
+        <template #left>
+            <van-button square type="primary" text="编辑" class="edit" @click="onEdit"/>
+        </template>
+        <div class="bill">
+            <div class="left">
+                <div class="top">
+                    <van-tag type="primary" v-for="(item,index) in type" :key="index">{{ item }}</van-tag>
+                </div>
+                <div class="bottom">备注：{{ remark }}</div>
             </div>
-            <div class="bottom">备注：{{ remark }}</div>
+            <div class="right">
+                <div class="top">
+                    ¥{{ money }}元
+                </div>
+                <div class="bottom">商家：{{ store }}</div>
+            </div>
         </div>
-        <div class="right">
-            ¥{{ money }}元
-        </div>
-    </div>
-
+        <!-- 使用 right 插槽来自定义右侧内容 -->
+        <template #right>
+            <van-button square type="danger" text="删除" class="delete" @click="onDelete(index)"/>
+        </template>
+    </van-swipe-cell>
 
 </template>
 
 <script lang="ts">
+import {useRouter} from "vue-router";
+
 export default {
     name: "Bill",
     props: {
@@ -30,6 +43,24 @@ export default {
         remark: {
             type: String,
             default: '吃了好多饭啊'
+        },
+        store: {
+            type: String,
+            default: '沙县小吃'
+        }
+    },
+    data() {
+        return {
+            router: useRouter()
+        }
+    },
+    methods: {
+        onDelete() {
+            console.log('删除')
+        },
+        onEdit() {
+            console.log('编辑')
+            this.router.push("/deal");
         }
     }
 }
@@ -49,9 +80,6 @@ export default {
     justify-content: space-between;
     padding: 10px 10px;
     background-color: #fff;
-    //圆角
-    border-radius: 15px;
-
     .left {
         display: flex;
         flex-direction: column;
@@ -79,6 +107,20 @@ export default {
         //字体上下剧中
         align-self: center;
     }
+}
+.delete {
+    background-color: #f44;
+    color: #fff;
+    height: 100%;
+    width: 50px;
+    font-size: 14px;
+}
+.edit {
+    background-color: #84B585;
+    color: #fff;
+    height: 100%;
+    width: 50px;
+    font-size: 14px;
 }
 
 </style>

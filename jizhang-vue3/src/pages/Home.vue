@@ -43,7 +43,7 @@ import {useRouter} from "vue-router";
 export default {
     name: "Home",
     components: {
-        Bill,
+        Bill
     },
     data() {
         return {
