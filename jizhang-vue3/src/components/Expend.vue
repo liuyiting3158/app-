@@ -1,11 +1,13 @@
 <template>
-    <van-grid :column-num="3">
-        <van-grid-item
-            v-for="(item,index) in icons"
-            :key="index" :icon=item.icon :text=item.text
-        />
-    </van-grid>
-
+    <div class="table-box">
+        <van-row class="th-row">
+            <van-button
+                v-for="item in icons"
+                :key="item.text" :icon=item.icon :text=item.text
+                :class="{active:active===item.text}"
+                @click="selected(item.text)">{{ item.text }}</van-button>
+        </van-row>
+    </div>
 </template>
 
 <script>
@@ -54,11 +56,15 @@ export default {
                     icon: 'edit-o'
                 }
             ],
+            active:''
         }
     },
     methods: {
         onClickLeft() {
             this.router.back();
+        },
+        selected(text){
+            this.active=text;
         }
     }
 }
@@ -67,5 +73,9 @@ export default {
 </script>
 
 <style scoped>
-
+.active{
+    background-color: #1989fa;
+    border:1px solid #1989fa;
+    color: #fff;
+}
 </style>

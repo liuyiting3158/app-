@@ -28,7 +28,6 @@
 
 <script lang="ts">
 import {useRouter} from "vue-router";
-
 export default {
     name: "Bill",
     props: {
