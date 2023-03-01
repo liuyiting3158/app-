@@ -22,23 +22,11 @@ export default {
                     icon: 'food-o'
                 },
                 {
-                    text: '购物',
-                    icon: 'shopping-cart-o'
+                    text: '出行',
+                    icon: 'car-o'
                 },
                 {
-                    text: '运动',
-                    icon: 'basketball-o',
-                },
-                {
-                    text: '交通',
-                    icon: 'bus-o'
-                },
-                {
-                    text: '通信',
-                    icon: 'phone-o'
-                },
-                {
-                    text: '旅行',
+                    text: '日用品',
                     icon: 'airplay-o'
                 },
                 {
@@ -51,7 +39,7 @@ export default {
                     icon: 'book-o',
                 },
                 {
-                    text: '自定义',
+                    text: '其他',
                     //笔图标
                     icon: 'edit-o'
                 }

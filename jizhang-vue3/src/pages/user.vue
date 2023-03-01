@@ -13,16 +13,9 @@
         </div>
     </div>
 
-    <!--    我的下方使用天数，总记账 天数，总记账笔数-->
-    <van-grid :column-num="3">
-        <van-grid-item text="使用天数:0"></van-grid-item>
-        <van-grid-item text="总记账天数:0"></van-grid-item>
-        <van-grid-item text="总记账笔数:0"></van-grid-item>
-    </van-grid>
-
     <!--    我的下方的功能-->
     <van-cell title="系统消息" is-link url="https://github.com"/>
-    <van-cell title="设置" is-link to="index"/>
+    <van-cell title="设置" is-link to="/Deal"/>
     <van-cell title="退出登陆" is-link to=""/>
 </template>
 
